@@ -130,3 +130,10 @@ body{background:#fff}
  .ah-body{padding:32px 48px 56px 20px}
  .ah-dots{bottom:20px}
 }
+
+/* ---------- Mobile hero: taller + room for the bigger sidebar ---------- */
+@media(max-width:768px){
+ .ah{min-height:clamp(560px,calc(100svh - 130px),720px)}
+ .ah-body{padding:48px 68px 70px 20px}
+ .ah-dots{bottom:26px}
+}

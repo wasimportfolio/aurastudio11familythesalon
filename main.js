@@ -59,7 +59,8 @@ const SERVICES = [
 
 const SOCIAL = {
   ig: 'https://www.instagram.com/aurastudiofamily_salon',
-  fb: 'https://www.facebook.com/',
+  fb: 'https://www.facebook.com/share/19nfiT29yZ/',
+  yt: 'https://youtube.com/@aurastudio11familythesalon',
   wa: 'https://wa.me/918680808683',
   tel: 'tel:+918680808683',
   review: 'https://maps.app.goo.gl/iXaYTH5WP91qxZ3i7'
@@ -92,6 +93,15 @@ if (!$('.social-sidebar')) {
          aria-label="Facebook">
         <i class="fab fa-facebook-f"></i>
         <span class="social-tooltip">Facebook</span>
+      </a>
+
+      <a href="${SOCIAL.yt}"
+         target="_blank"
+         rel="noopener"
+         class="youtube-link"
+         aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+        <span class="social-tooltip">YouTube</span>
       </a>
 
       <a href="${SOCIAL.wa}"
@@ -153,7 +163,7 @@ if (page) {
           ${nav}
         </nav>
 
-        <a href="index.html#booking" class="book-btn">
+        <a href="contact.html#c-form" class="book-btn">
           <i class="fa-regular fa-calendar"></i>
           <span>BOOK APPOINTMENT</span>
         </a>
@@ -170,7 +180,7 @@ if (page) {
           .map(l => `<a href="${l[0]}">${l[1]}</a>`)
           .join('')}
 
-        <a href="index.html#booking" class="mobile-book">
+        <a href="contact.html#c-form" class="mobile-book">
           <i class="fa-regular fa-calendar"></i>
           BOOK APPOINTMENT
         </a>
@@ -210,6 +220,15 @@ if (page) {
     `
     <footer class="footer">
 
+      <div class="footer-connect">
+        <a href="${SOCIAL.tel}" class="fc-phone">
+          <i class="fas fa-phone"></i> +91 86808 08683
+        </a>
+        <a href="${SOCIAL.ig}" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="${SOCIAL.fb}" target="_blank" rel="noopener" class="social-icon fb" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="${SOCIAL.yt}" target="_blank" rel="noopener" class="social-icon yt" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+
       <div class="footer-bottom">
 
         <p>
@@ -220,7 +239,7 @@ if (page) {
         </p>
 
         <p>
-  Designed &amp; Developed by
+          Designed &amp; Developed by
   <a href="https://wasim4k.github.io/mw-craft/"
      target="_blank"
      rel="noopener"
@@ -228,7 +247,7 @@ if (page) {
     <strong>MW WebCraft</strong>
     <i class="fa-solid fa-arrow-up-right-from-square"></i>
   </a>
-</p>
+        </p>
 
       </div>
 
@@ -257,7 +276,7 @@ document.body.insertAdjacentHTML(
       WhatsApp
     </a>
 
-    <a href="index.html#booking">
+    <a href="contact.html#c-form">
       <i class="fa-regular fa-calendar"></i>
       Book
     </a>
@@ -311,7 +330,7 @@ if (sv && !sv.children.length) {
 
             <p>${s[1]}</p>
 
-            <a class="btn-gold" href="index.html#booking">
+            <a class="btn-gold" href="contact.html?service=${encodeURIComponent(s[0])}#c-form">
               Book ${s[0]}
             </a>
 
@@ -426,6 +445,14 @@ if (gg) {
 const cf = $('#c-form');
 
 if (cf) {
+
+  /* Pre-select service when coming from a "Book <service>" button */
+  const wanted = new URLSearchParams(location.search).get('service');
+  if (wanted && cf.elements.service) {
+    [...cf.elements.service.options].forEach(o => {
+      if (o.value === wanted) cf.elements.service.value = wanted;
+    });
+  }
 
   const SERVICE_EMOJI = {
     'Hair Cut': '✂️',

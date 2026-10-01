@@ -574,3 +574,36 @@ img.img-fail{object-fit:contain;min-height:160px}
     padding: 8px 11px;
   }
 }
+
+/* ---------- Footer credit link, active nav, mobile menu scroll lock ---------- */
+.mw-link{color:var(--gold-light);text-decoration:none}
+.mw-link i{margin-left:6px;font-size:.8em}
+.mw-link:hover{text-decoration:underline}
+.nav-link.active{color:var(--gold-light)}
+body.menu-open{overflow:hidden}
+
+/* ---------- Form anchor offset (fixed header) ---------- */
+#c-form{scroll-margin-top:110px}
+
+/* ---------- Mobile: bigger social sidebar for easy tapping ---------- */
+@media(max-width:768px){
+ .social-sidebar a{width:52px;height:56px;font-size:24px}
+ .social-sidebar a.phone-link{display:none}
+}
+
+/* ===== Facebook + YouTube: sidebar, footer, inner-page footer ===== */
+.social-sidebar a.youtube-link:hover{background:#FF0000;color:#fff}
+.footer-social{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.footer-social .social-icon{margin-top:0}
+.social-icon.fb:hover{background:#1877F2;border-color:#1877F2;color:#fff}
+.social-icon.yt:hover{background:#FF0000;border-color:#FF0000;color:#fff}
+.footer-connect{max-width:1200px;margin:0 auto;padding:34px 20px 10px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.footer-connect .social-icon{margin-top:0}
+.footer-connect .fc-phone{color:var(--gold-light);text-decoration:none;font-weight:600;letter-spacing:.5px;margin-right:14px}
+.footer-connect .fc-phone i{margin-right:8px}
+.footer-connect .fc-phone:hover{color:#fff}
+@media(max-width:768px){
+ .footer-connect{padding-bottom:4px}
+ .footer-connect .fc-phone{flex-basis:100%;text-align:center;margin:0 0 4px}
+ .social-sidebar a{width:48px;height:50px;font-size:21px}
+}
