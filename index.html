@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aura Studio 11 | Family The Salon</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="premium.css">
+<link rel="stylesheet" href="balance.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Social sidebar is injected by main.js (all pages) -->
+
+<!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Aura Studio 11">
+            </a>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="navbar">
+
+                <a href="#" class="nav-link active">HOME</a>
+                <a href="#about" class="nav-link">ABOUT US</a>
+                <a href="services.html" class="nav-link">SERVICES</a>
+                <a href="gallery.html" class="nav-link">GALLERY</a>
+                <a href="#reviews" class="nav-link">REVIEWS</a>
+                <a href="#instagram" class="nav-link">INSTAGRAM</a>
+                <a href="contact.html" class="nav-link">CONTACT</a>
+
+            </nav>
+
+            <!-- BOOK BUTTON -->
+            <a href="#booking" class="book-btn">
+                <i class="fa-regular fa-calendar"></i>
+                <span>BOOK APPOINTMENT</span>
+            </a>
+
+            <!-- MOBILE MENU -->
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+        <!-- MOBILE NAV -->
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#">HOME</a>
+            <a href="#about">ABOUT US</a>
+            <a href="services.html">SERVICES</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="#reviews">REVIEWS</a>
+            <a href="#instagram">INSTAGRAM</a>
+            <a href="contact.html">CONTACT</a>
+
+            <a href="#booking" class="mobile-book">
+                <i class="fa-regular fa-calendar"></i>
+                BOOK APPOINTMENT
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= END HEADER ================= -->
+
+
+    <script>
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("show");
+
+            if (mobileMenu.classList.contains("show")) {
+                menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                document.body.classList.add("menu-open");
+            } else {
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                document.body.classList.remove("menu-open");
+            }
+        });
+
+        document.querySelectorAll(".mobile-menu a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("show");
+                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+                document.body.classList.remove("menu-open");
+            });
+        });
+
+    </script>
+
+    <!-- ================= HERO SECTION ================= -->
+
+<section class="ah" id="home">
+  <div class="ah-slides">
+    <img class="on" src="images/salon.png" alt="Aura Studio 11 salon interior">
+    <img src="images/salon1.png" alt="Aura Studio 11 hair styling">
+  </div>
+  <div class="ah-shade"></div>
+  <div class="ah-dots" id="ahDots" aria-label="Hero slides"></div>
+  <div class="ah-body">
+    <p class="ah-tag">LUXURY SALON IN KUMBAKONAM</p>
+    <h1>Aura Studio 11</h1>
+    <h2>Family The Salon</h2>
+    <div class="ah-line"></div>
+    <p class="ah-sub">Luxury salon experience at an affordable price.</p>
+    <p class="ah-meta">Hair <i>·</i> Skin <i>·</i> Makeup <i>·</i> Bridal <i>·</i> Nails</p>
+    <div class="ah-cta">
+      <a class="ah-book" href="#booking"><i class="fa-regular fa-calendar"></i>&nbsp; Book Now</a>
+      <a class="ah-more" href="services.html">Our Services</a>
+    </div>
+  </div>
+  <div class="ah-strip">
+    <div><strong>4.9<small>★</small></strong><span>Google Rating</span></div>
+    <div><strong>1000+</strong><span>Happy Clients</span></div>
+    <div><strong>20+</strong><span>Beauty Experts</span></div>
+    <div><strong>8</strong><span>Premium Services</span></div>
+  </div>
+</section>
+
+<!-- ================= END HERO ================= -->
+
+<!-- ================= BOOKING SECTION ================= -->
+
+<section class="booking-section" id="booking">
+
+    <div class="booking-container">
+
+        <div class="section-heading">
+            <span>✦</span>
+            <h2>BOOK YOUR APPOINTMENT</h2>
+            <span>✦</span>
+        </div>
+
+        <div class="booking-cards">
+
+            <!-- 15 MINUTES -->
+            <div class="booking-card">
+
+                <div class="booking-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <div class="booking-content">
+                    <h3>15 Minutes Meeting</h3>
+
+                    <p class="meeting-type">
+                        Video Call
+                    </p>
+
+                    <p class="booking-details">
+                        Duration: 15 mins &nbsp; · &nbsp; Price: Free
+                    </p>
+
+                    <a href="https://aurastudio11.setmore.com/book?step=time-slot&products=6dc98f46-1c17-4562-b242-9a383e9dab64&type=service&staff=601f04b0-1839-47f5-8718-d6e766e30bec&staffSelected=true"
+                       target="_blank"
+                       class="booking-btn">
+                        BOOK NOW
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- 30 MINUTES -->
+            <div class="booking-card">
+
+                <div class="booking-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <div class="booking-content">
+                    <h3>30 Minutes Meeting</h3>
+
+                    <p class="meeting-type">
+                        Video Call
+                    </p>
+
+                    <p class="booking-details">
+                        Duration: 30 mins &nbsp; · &nbsp; Price: Free
+                    </p>
+
+                    <a href="https://aurastudio11.setmore.com/book?step=time-slot&products=c406aa78-6534-47df-b743-f462e32f6ee8&type=service&staff=601f04b0-1839-47f5-8718-d6e766e30bec&staffSelected=true"
+                       target="_blank"
+                       class="booking-btn">
+                        BOOK NOW
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- 1 HOUR -->
+            <div class="booking-card">
+
+                <div class="booking-icon">
+                    <i class="fa-solid fa-video"></i>
+                </div>
+
+                <div class="booking-content">
+                    <h3>1 Hour Meeting</h3>
+
+                    <p class="meeting-type">
+                        Video Call
+                    </p>
+
+                    <p class="booking-details">
+                        Duration: 1 hr &nbsp; · &nbsp; Price: Free
+                    </p>
+
+                    <a href="https://aurastudio11.setmore.com/book?step=time-slot&products=926f01bd-2cae-4d58-b783-c9f7a40078ef&type=service&staff=601f04b0-1839-47f5-8718-d6e766e30bec&staffSelected=true"
+                       target="_blank"
+                       class="booking-btn">
+                        BOOK NOW
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END BOOKING ================= -->
+
+<!-- ================= ABOUT SECTION ================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="about-image">
+            <img src="images/about-us.png"
+                 alt="Aura Studio 11 Interior">
+        </div>
+
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-content">
+
+            <div class="about-text">
+
+                <span class="about-label">ABOUT US</span>
+
+                <h2>
+                    ABOUT AURA STUDIO 11
+                </h2>
+
+                <div class="about-line"></div>
+
+                <p>
+                    Aura Studio 11 has been successfully
+                    running for one and of year as a luxury
+                    salon in Kumbakonam.
+                </p>
+
+                <p>
+                    We believe in customer satisfaction
+                    with quality service at an affordable price.
+                </p>
+
+                <a href="#services" class="about-btn">
+                    KNOW MORE
+                </a>
+
+            </div>
+
+
+            <!-- EXPERIENCE -->
+            <div class="experience">
+
+                <span class="experience-label">
+                    OUR EXPERIENCE
+                </span>
+
+                <div class="experience-line"></div>
+
+                <div class="experience-main">
+                    <strong>1+</strong>
+                    <span>Year of Excellence</span>
+                </div>
+
+                <div class="experience-stats">
+
+                    <div class="stat">
+                        <strong>1000+</strong>
+                        <span>Happy Clients</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>20+</strong>
+                        <span>Beauty Experts</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END ABOUT SECTION ================= -->
+
+<!-- ================= PHOTO MARQUEE ================= -->
+<section class="mq-sec" id="looks" aria-label="Photo strip">
+  <div class="mq-head"><h2>Fresh from the studio</h2><p>Hair, makeup, bridal and skin looks created for our clients in Kumbakonam.</p></div>
+  <div class="mq-row" id="mqA"><div class="mq-track">
+<figure><img src="images/facial.jpg" alt="Salon hair styling" loading="lazy"></figure>
+<figure><img src="images/facial1.jpg" alt="Salon haircut" loading="lazy"></figure>
+<figure><img src="images/facial2.jpg" alt="Salon makeup" loading="lazy"></figure>
+<figure><img src="images/men-groom.jpg" alt="Bridal beauty" loading="lazy"></figure>
+<figure><img src="images/men-groom1.jpg" alt="Salon styling" loading="lazy"></figure>
+</div></div>
+  <div class="mq-row" id="mqB"><div class="mq-track">
+<figure><img src="images/men-groom2.jpg" alt="Salon interior" loading="lazy"></figure>
+<figure><img src="images/men-haircut.jpg" alt="Hair styling" loading="lazy"></figure>
+<figure><img src="images/men-haircut1.jpg" alt="Makeup service" loading="lazy"></figure>
+<figure><img src="images/men-haircut2.jpg" alt="Bridal styling" loading="lazy"></figure>
+</div></div>
+</section>
+
+<!-- ================= GALLERY SECTION ================= -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="gallery-container">
+
+        <!-- HEADING -->
+        <div class="gallery-heading">
+
+            <span>✦</span>
+
+            <div>
+                <span class="gallery-label">OUR WORK</span>
+                <h2>OUR GALLERY</h2>
+                <p>
+                    A glimpse of the Aura Studio 11 experience.
+                </p>
+            </div>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <!-- GALLERY GRID -->
+        <div class="gallery-grid">
+
+            <div class="gallery-item gallery-large">
+                <img src="images/client5.webp"
+                     alt="Aura Studio 11 Salon">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/client3.webp"
+                     alt="Aura Studio 11">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/client2.webp"
+                     alt="Salon Interior">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/client4.webp"
+                     alt="Salon Service">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/client.webp"
+                     alt="Beauty Service">
+            </div>
+
+        </div>
+
+
+        <!-- BUTTON -->
+        <div class="gallery-bottom">
+
+            <a href="gallery.html"
+               target="_blank"
+               class="gallery-btn">
+                VIEW ALL PHOTOS
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END GALLERY ================= -->
+
+
+<!-- ================= SERVICES SECTION ================= -->
+
+<section class="services-section" id="services">
+
+    <div class="services-container">
+
+        <!-- HEADING -->
+        <div class="services-heading">
+
+            <span class="heading-decoration">✦</span>
+
+            <div>
+                <span class="section-label">WHAT WE OFFER</span>
+                <h2>OUR PREMIUM SERVICES</h2>
+                <p>
+                    Beauty, style and care — all under one roof.
+                </p>
+            </div>
+
+            <span class="heading-decoration">✦</span>
+
+        </div>
+
+
+        <!-- SERVICES GRID -->
+        <div class="services-grid">
+
+            <!-- 1 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/men-haircut.jpg" alt="Hair Cut" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+
+                <h3>Hair Cut</h3>
+
+                <p>
+                    Professional haircuts and styling
+                    for your perfect look.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 2 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/hair-color1.jpg" alt="Hair Color" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+
+                <h3>Hair Color</h3>
+
+                <p>
+                    Premium hair coloring designed
+                    for a beautiful finish.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 3 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/facial.jpg" alt="Skin Care" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+
+                <h3>Skin Care</h3>
+
+                <p>
+                    Refreshing skincare treatments
+                    for healthy glowing skin.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 4 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/hair-spa.jpg" alt="Hair Spa" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+
+                <h3>Hair Spa</h3>
+
+                <p>
+                    Relaxing hair spa treatments
+                    for healthy and smooth hair.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 5 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/mackup.jpg" alt="Makeup" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <h3>Makeup</h3>
+
+                <p>
+                    Elegant makeup services for
+                    every special occasion.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 6 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/bridal.jpg" alt="Bridal" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-ring"></i>
+                </div>
+
+                <h3>Bridal</h3>
+
+                <p>
+                    Complete bridal beauty services
+                    for your memorable day.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 7 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/nail-care.jpg" alt="Nail Care" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-hand-sparkles"></i>
+                </div>
+
+                <h3>Nail Care</h3>
+
+                <p>
+                    Beautiful nail care and styling
+                    for a polished look.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+
+            <!-- 8 -->
+            <div class="service-card">
+
+                <img class="service-photo" src="images/men-groom.jpg" alt="Beard Trim" loading="lazy">
+<div class="service-icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+
+                <h3>Beard Trim</h3>
+
+                <p>
+                    Expert beard grooming and styling
+                    for a sharp appearance.
+                </p>
+
+                <a href="#booking">BOOK NOW <span>→</span></a>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIEW ALL -->
+        <div class="services-bottom">
+
+            <a href="#booking" class="view-services-btn">
+                VIEW ALL SERVICES
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= END SERVICES ================= -->
+
+<!-- ================= BEFORE / AFTER ================= -->
+<section class="ba-sec" id="transformations">
+  <h2>See the difference</h2>
+  <p>Drag the slider left and right to compare before and after.</p>
+  <div class="ba-tabs" id="baTabs">
+<button type="button" class="on" data-before="images/before-hair-color.jpg" data-after="images/after-hair-color.jpg">Hair Colour</button>
+<button type="button" data-before="images/before-makeup.jpg" data-after="images/after-makeup.jpg">Makeup</button>
+<button type="button" data-before="images/bridal-before.jpg" data-after="images/bridal-after.jpg">Bridal</button>
+<button type="button" data-before="images/skincare-before.jpg" data-after="images/skincare-after.jpg">Skin Care</button>
+</div>
+  <div class="ba" id="ba">
+    <img class="ba-after" src="images/after-hair-color.jpg" alt="Hair colour after">
+    <img class="ba-before" src="images/before-hair-color.jpg" alt="Hair colour before">
+    <span class="ba-tag b">Before</span><span class="ba-tag a">After</span>
+    <div class="ba-line"></div>
+    <input type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+    <div class="ba-knob"><i class="fa-solid fa-arrows-left-right"></i></div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS SECTION ================= -->
+<section class="reviews-section" id="reviews">
+
+    <div class="reviews-container">
+
+        <!-- Section Heading -->
+        <div class="reviews-heading">
+            <span>WHAT OUR CLIENTS SAY</span>
+            <h2>OUR CUSTOMER REVIEWS</h2>
+            <div class="heading-line"></div>
+            <p>
+                We are proud to provide a premium salon experience with
+                exceptional service and customer satisfaction.
+            </p>
+        </div>
+
+        <!-- Rating Summary -->
+        <div class="rating-summary">
+
+            <div class="overall-rating">
+                <h3>4.9</h3>
+
+                <div class="stars">
+                    ★ ★ ★ ★ ★
+                </div>
+
+                <p>Based on 52 Reviews</p>
+            </div>
+
+            <div class="rating-details">
+
+                <div class="rating-row">
+                    <span>5 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill rating-95"></div>
+                    </div>
+                    <span>49</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>4 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill rating-6"></div>
+                    </div>
+                    <span>3</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>3 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill rating-0"></div>
+                    </div>
+                    <span>0</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>2 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill rating-0"></div>
+                    </div>
+                    <span>0</span>
+                </div>
+
+                <div class="rating-row">
+                    <span>1 ★</span>
+                    <div class="rating-bar">
+                        <div class="rating-fill rating-0"></div>
+                    </div>
+                    <span>0</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Review Cards -->
+        <div class="reviews-grid">
+
+            <div class="review-card">
+
+                <div class="review-top">
+                    <div class="review-avatar">V</div>
+
+                    <div>
+                        <h4>Vithya</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <p>
+                    "Good service and a very nice experience.
+                    The staff were friendly and provided excellent service."
+                </p>
+
+                <span class="review-date">Customer Review</span>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+                    <div class="review-avatar">C</div>
+
+                    <div>
+                        <h4>Customer</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <p>
+                    "Experience was good. Very happy with the service
+                    and the overall salon atmosphere."
+                </p>
+
+                <span class="review-date">Customer Review</span>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+                    <div class="review-avatar">C</div>
+
+                    <div>
+                        <h4>Customer</h4>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <p>
+                    "Good service and good customer support.
+                    Really satisfied with the overall experience."
+                </p>
+
+                <span class="review-date">Customer Review</span>
+
+            </div>
+
+        </div>
+
+        <!-- Google Reviews Button -->
+        <div class="reviews-button">
+            <a href="https://maps.app.goo.gl/iXaYTH5WP91qxZ3i7"
+               target="_blank">
+                VIEW ALL REVIEWS
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-sec" id="contact">
+  <h2>Visit Aura Studio 11</h2>
+  <p>Walk in, call, or message us on WhatsApp. We are in Anna Nagar, Kumbakonam.</p>
+  <div class="ct-cards">
+    <a href="contact.html"><i class="fas fa-map-marker-alt"></i>No. 34, Mela Ullikhan Street,<br>Anna Nagar, Kumbakonam – 612001</a>
+    <a href="tel:+918680808683"><i class="fas fa-phone"></i>+91 86808 08683<br>Tap to call</a>
+    <a href="https://wa.me/918680808683" target="_blank"><i class="fab fa-whatsapp"></i>Chat on WhatsApp<br>Ask about services and timings</a>
+  </div>
+  <a href="contact.html" class="btn-gold">Open contact page</a>
+</section>
+
+<!-- ================= INSTAGRAM SECTION ================= -->
+<section class="ig-sec" id="instagram">
+  <h2>Follow us on Instagram</h2>
+  <p>@aurastudiofamily_salon: new looks, bridal work and salon moments.</p>
+  <div class="ig-grid"><a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" aria-label="Open Instagram"><img src="images/insta1.jpg" alt="Aura Studio 11 on Instagram" loading="lazy"></a><a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" aria-label="Open Instagram"><img src="images/insta2.jpg" alt="Aura Studio 11 on Instagram" loading="lazy"></a><a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" aria-label="Open Instagram"><img src="images/insta3.jpg" alt="Aura Studio 11 on Instagram" loading="lazy"></a><a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" aria-label="Open Instagram"><img src="images/insta4.jpg" alt="Aura Studio 11 on Instagram" loading="lazy"></a><a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" aria-label="Open Instagram"><img src="images/insta5.jpg" alt="Aura Studio 11 on Instagram" loading="lazy"></a><a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" aria-label="Open Instagram"><img src="images/insta6.jpg" alt="Aura Studio 11 on Instagram" loading="lazy"></a></div>
+  <a href="https://www.instagram.com/aurastudiofamily_salon" target="_blank" rel="noopener" class="btn-gold"><i class="fab fa-instagram"></i> Follow on Instagram</a>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- Brand -->
+        <div class="footer-column footer-brand">
+            <div class="footer-logo">
+                <span class="logo-main">AURA STUDIO 11</span>
+                <span class="logo-sub">FAMILY THE SALON</span>
+            </div>
+
+            <p>
+                Experience luxury beauty and professional salon services
+                at Aura Studio 11 – Family The Salon, Kumbakonam.
+            </p>
+
+            <a href="https://www.instagram.com/aurastudiofamily_salon?igsi=MTliZnpkYnI1dnU3bA=="
+               target="_blank"
+               class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/"
+               target="_blank"
+               class="social-icon"
+               aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+
+            <h3>QUICK LINKS</h3>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+
+
+        <!-- Services -->
+        <div class="footer-column">
+
+            <h3>OUR SERVICES</h3>
+
+            <ul>
+                <li><a href="#services">Hair Cut</a></li>
+                <li><a href="#services">Hair Color</a></li>
+                <li><a href="#services">Skin Care</a></li>
+                <li><a href="#services">Hair Spa</a></li>
+                <li><a href="#services">Makeup</a></li>
+                <li><a href="#services">Bridal Services</a></li>
+            </ul>
+
+        </div>
+
+
+        <!-- Contact -->
+        <div class="footer-column footer-contact">
+
+            <h3>CONTACT US</h3>
+
+            <p>
+                <i class="fas fa-map-marker-alt"></i>
+                No. 34, Mela Ullikhan Street,<br>
+                Anna Nagar, Kumbakonam,<br>
+                Tamil Nadu – 612001
+            </p>
+
+            <p>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+918680808683">+91 86808 08683</a>
+            </p>
+
+            <p>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:aurastudiofamilythesalon@gmail.com">
+                    aurastudiofamilythesalon@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 <strong>Aura Studio 11 – Family The Salon</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+    Designed &amp; Developed by
+    <a href="https://wasim4k.github.io/mw-craft/"
+       target="_blank"
+       rel="noopener"
+       class="mw-link">
+        <strong>MW WebCraft</strong>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
+</p>
+
+    </div>
+
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

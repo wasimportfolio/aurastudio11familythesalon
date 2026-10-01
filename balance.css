@@ -1,0 +1,132 @@
+/* Aura Studio 11 – colour balance + new home sections. Load AFTER premium.css
+   Navy is now kept for: hero, before/after stage, footer (+ small buttons). Everything else is white. */
+:root{--gold-deep:#8f6610;--ink:#4a5568;--line:rgba(201,151,43,.28)}
+body{background:#fff}
+
+/* ---------- Booking: white ---------- */
+.booking-section{background:#fff;border:0;border-bottom:1px solid var(--line);padding:56px 40px 60px}
+.section-heading h2{color:var(--navy);font-size:34px}
+.booking-card{background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(6,26,58,.06)}
+.booking-card:hover{background:#fffdf7;border-color:var(--gold);box-shadow:0 14px 34px rgba(6,26,58,.1)}
+.booking-icon{background:#fbf3de}
+.booking-icon i{color:var(--gold-deep)}
+.booking-content h3{color:var(--navy)}
+.meeting-type{color:var(--ink)}
+.booking-details{color:#6b7280;font-size:11px}
+
+/* ---------- About: white ---------- */
+.about-section{background:#fff}
+.about-content{color:var(--navy)}
+.about-label{color:var(--gold-deep);font-weight:600}
+.about-text h2{color:var(--navy)}
+.about-text p{color:var(--ink)}
+.experience-label{color:var(--gold-deep)}
+.experience-main strong,.stat strong{color:var(--gold-deep)}
+.experience-main span,.stat span{color:var(--ink)}
+
+/* ---------- Gallery: white ---------- */
+.gallery-section{background:#fff;border-top:1px solid var(--line)}
+.gallery-label{color:var(--gold-deep)}
+.gallery-heading h2{color:var(--navy)}
+.gallery-heading p{color:var(--ink)}
+.gallery-item{background:#f3efe4;border-color:var(--line)}
+.gallery-btn{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gallery-btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+
+/* ---------- Services: white ---------- */
+.services-section{background:#fff;border-top:1px solid var(--line)}
+.service-card{background:#fff;border:1px solid var(--line);box-shadow:0 10px 30px rgba(6,26,58,.06)}
+.view-services-btn{background:var(--navy);color:#fff}
+.view-services-btn:hover{background:var(--gold);color:#fff}
+
+/* ---------- Reviews: white ---------- */
+.reviews-section{background:#fff;color:var(--navy);border-top:1px solid var(--line)}
+.reviews-heading span{color:var(--gold-deep)}
+.reviews-heading h2{color:var(--navy)}
+.reviews-heading p{color:var(--ink)}
+.rating-summary{background:#fffdf7;border:1px solid var(--line);border-top:3px solid var(--gold)}
+.review-card{background:#fff;border:1px solid var(--line);border-bottom:3px solid var(--gold);box-shadow:0 10px 30px rgba(6,26,58,.06)}
+
+/* ---------- Contact + Instagram stay light ---------- */
+.contact-sec{background:#fffdf7;border-top:1px solid var(--line)}
+.ig-sec{background:#fff}
+.contact-sec .btn-gold,.ig-sec .btn-gold{margin-top:4px}
+
+/* ---------- Photo marquee (white) ---------- */
+.mq-sec{background:#fff;padding:70px 0 60px;overflow:hidden;border-top:1px solid var(--line)}
+.mq-head{text-align:center;padding:0 20px 34px}
+.mq-head h2{font-family:"Cormorant Garamond",serif;font-size:clamp(32px,5vw,48px);color:var(--navy);margin:0 0 8px;font-weight:600}
+.mq-head p{margin:0 auto;max-width:480px;color:var(--ink);line-height:1.7;font-size:15px}
+.mq-row{display:flex;width:max-content;animation:mqL 55s linear infinite}
+.mq-row+.mq-row{margin-top:14px;animation-name:mqR;animation-duration:65s}
+.mq-row:hover{animation-play-state:paused}
+.mq-row figure{margin:0 14px 0 0;width:230px;height:290px;flex:none;overflow:hidden;border:1px solid var(--line)}
+.mq-row+.mq-row figure{width:290px;height:200px}
+.mq-row img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes mqL{to{transform:translateX(-50%)}}
+@keyframes mqR{from{transform:translateX(-50%)}to{transform:none}}
+
+/* ---------- Before / After (the one navy stage) ---------- */
+.ba-sec{background:var(--navy);padding:84px 20px 90px;color:#fff;text-align:center}
+.ba-sec h2{font-family:"Cormorant Garamond",serif;font-size:clamp(34px,5.4vw,56px);color:var(--gold-light);margin:0 0 10px;font-weight:600}
+.ba-sec>p{margin:0 auto 30px;max-width:460px;color:#d9dfeb;line-height:1.7}
+.ba-tabs{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:28px}
+.ba-tabs button{border:1px solid var(--gold);background:transparent;color:#fff;padding:9px 20px;font:600 13px Montserrat,sans-serif;cursor:pointer;transition:background .25s,color .25s}
+.ba-tabs button.on,.ba-tabs button:hover{background:var(--gold);color:var(--navy)}
+.ba{--p:50%;position:relative;max-width:880px;margin:0 auto;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--gold);background:var(--navy-light);user-select:none;-webkit-user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.ba .ba-before{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba .ba-before.fx{filter:grayscale(.85) brightness(.82) contrast(.9)}
+.ba-tag{position:absolute;top:14px;z-index:3;padding:6px 12px;background:rgba(6,26,58,.72);color:#fff;font:600 11px Montserrat,sans-serif;letter-spacing:1.5px;text-transform:uppercase}
+.ba-tag.b{left:14px}.ba-tag.a{right:14px;background:rgba(201,151,43,.92);color:var(--navy)}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--gold-light);z-index:4;pointer-events:none}
+.ba-knob{position:absolute;top:50%;left:var(--p);width:46px;height:46px;margin:-23px 0 0 -23px;z-index:5;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,.35);pointer-events:none}
+.ba input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:6;touch-action:pan-y;-webkit-appearance:none;appearance:none}
+.ba input:focus-visible+.ba-knob{outline:3px solid #fff;outline-offset:3px}
+.ba-note{margin:16px 0 0;font-size:12px;color:#aeb8cc}
+@media(max-width:768px){
+ .mq-sec{padding:50px 0 44px}
+ .mq-row figure{width:160px;height:210px;margin-right:10px}
+ .mq-row+.mq-row figure{width:200px;height:140px}
+ .booking-section{padding:40px 20px 44px}
+ .ba-sec{padding:60px 16px 70px}
+ .ba{aspect-ratio:4/5}
+}
+@media(prefers-reduced-motion:reduce){.mq-row{animation:none!important;overflow-x:auto;width:auto}}
+
+/* ---------- Home gallery: show the full photos (no cut-off poster / faces) ---------- */
+.gallery-grid{grid-template-rows:300px 300px!important;gap:16px!important}
+.gallery-large{grid-row:span 2!important;background:var(--navy)!important}
+.gallery-large img{object-fit:contain!important}          /* poster is always fully visible */
+.gallery-item:not(.gallery-large) img{object-position:center 18%}  /* keeps faces / hair in frame */
+@media(max-width:900px){
+ .gallery-grid{grid-template-columns:1fr 1fr!important;grid-template-rows:none!important;grid-auto-rows:auto!important}
+ .gallery-item{aspect-ratio:1/1;height:auto!important}
+ .gallery-large{grid-column:span 2!important;grid-row:span 1!important;aspect-ratio:1/1}
+}
+@media(max-width:600px){
+ .gallery-grid{grid-template-columns:1fr!important}
+ .gallery-large{grid-column:span 1!important;aspect-ratio:4/5}
+ .gallery-item:not(.gallery-large){aspect-ratio:4/5}
+}
+
+/* ---------- Marquee: full photos, natural proportions (no cropping) ---------- */
+.mq-row figure,.mq-row+.mq-row figure{width:auto;height:280px;background:#f3efe4}
+.mq-row+.mq-row figure{height:200px}
+.mq-row img{width:auto;height:100%;max-width:none;object-fit:contain;min-width:120px}
+@media(max-width:768px){
+ .mq-row figure,.mq-row+.mq-row figure{height:230px}
+ .mq-row+.mq-row figure{height:160px}
+}
+
+/* ---------- Hero: balanced height (final) ---------- */
+/* Hero is a comfortable size (not tiny, not full-screen). Any spare height is split EVENLY above and
+   below the text (text is vertically centred between the top and the stats strip), so no big gap on top. */
+.ah{min-height:clamp(540px,calc(100svh - 100px),590px);max-height:none;align-items:stretch;justify-content:flex-start}
+.ah-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding-top:48px;padding-bottom:48px}
+.ah-dots{bottom:100px}
+@media(max-width:768px){
+ .ah{min-height:clamp(410px,calc(100svh - 142px),440px)}
+ .ah-body{padding:32px 48px 56px 20px}
+ .ah-dots{bottom:20px}
+}
